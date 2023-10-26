@@ -48,6 +48,17 @@ Library Management System
             - Deverá checar se a quantidade devolvida está de acordo com o que foi emprestado
             - Deverá checar se a devolução não está atrasada.
 
+7. Tela de login
+    a. Ao abrir o sistema, uma tela requerindo login e senha será aberta.
+    b. Ao validar o acesso, será aberta a tela inicial do sistema.
+
+8. Tela inicial
+    a. A depender do tipo de usuário, os recursos disoníveis serão diferentes, sendo:
+        - Leitor: Buscar livros, Reservar, Consultar emprestimos
+        - Bibliotecário: Realizar emprestimo, Concluir devolução, adicionar livro, consultar emprestimos, buscar livros
+        - Admin: Todas as funções acima; Gestão de usuários (adicionar, mudar cargo ou excluir usuários cadastrados)
+    b. Botão de logout
+    c. Área para ver os dados da conta e editar.
 
 
 
