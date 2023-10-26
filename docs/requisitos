@@ -1,0 +1,54 @@
+Library Management System
+
+1. Deve ser possível cadastrar livros
+    a. Livros devem ter título, autores, id, gênero, edição, ano de publicação
+    b. Apenas o usuário do tipo "Bibliotecário" pode realizar cadastros
+    c. Livros possuem etiquetas, que informam quantos dias eles podem ficar sob a posse do usuário (Azul: 14 dias, Verde: 7 dias, Vermelho: 3 dias)
+
+2. Deve ser possível cadastrar usuários
+    a. Usuários devem possuir os campos: Nome, CPF, endereço, telefone, Gênero, Data de nascimento.
+    b. O sistema deve validar o CPF
+    c. O sistema deve validar a data de nascimento
+    d. (extra) Fazer uma busca por CEP, retornando o endereço completo da pessoa.
+    f. Existem três tipos de usuário no sistema: Bibliotecário, Leitor e ADMIN
+    h. Apenas o ADMIN tem permissão para criar ou promover um usuário a "Bibliotecário".
+
+3. O sistema deve permitir que um usuário faça um emprestimo
+    a. O emprestimo sempre é vinculado a um usuário
+    b. O usuário bibliotecário que realizou o emprestimo também deve ser vinculado
+    c. É possível fazer o emprestimo de até 10 livros por usuário.
+    d. O usuário pode renovar 1 ou mais livros emprestados, desde que o mesmo não tenha sido emprestado.
+
+4. O sistema deve gerenciar o estoque de livros
+    a. Deve ser disponibilizada a quantidade de cada livro disponível, bem com o total de livros disponíveis e emprestados da biblioteca.
+    b. Sempre que um livro é emprestado, deve ser reduzido do total de livros disponíveis.
+    c. Quando o usuário devolver um livro, deve ser somado ao total de livros disponíveis.
+    d. O usuário do tipo "Bibliotecário" pode fazer um inventário a qualquer momento, a fim de atualizar a quantidade total de livros no sistema.
+    e. O bibliotecário também podem acrescentar/decrementar a quantidade de livros a qualquer momento, podendo dar uma justificativa (compra, livro destruído, não devolução, etc)
+
+5.  O sistema deve permitir que seja feito um login
+    a. O sistema deve exibir as funcionalidades de acordo com o nível de permissão do usuário logado (bibliotecário ou leitor)
+    b. Deve haver um sistema disponível apenas para o usuário do tipo ADMIN, capaz de gerenciar as diferentes contas de usuários.
+    c. Todo login deve possuir uma senha.
+    d. O usuário pode alterar a senha a qualquer momento.
+    e. O sistema pede para fazer o login ou cadastrar sempre que inicia.
+    f. Feito o login, o usuário será redirecionado a uma tela inicial, com os recursos habilitados de acordo com o seu nível de acesso no sistema.
+
+6. Tipos de usuários
+    a. Leitor
+        - Podem emprestar, reservar e consultar livros disponíveis.
+        - Podem prorrogar a data de devolução, desde que não exista reserva do livro e não tenha atrasado a devolução.
+    b. Bibliotecário
+        - Possui todas as funções de Leitor disoponíveis
+        - Pode realizar um emprestimo para outro usuário (necessariamente um usuário do tipo "Leitor" só pode realizar o emprestimo se um usuário do tipo "Bibliotecário" der baixa no sistema).
+            - A funcionalidade de "Emprestar" faz a associação do usuário com um emprestimo
+            - O emprestimo deve conter: Id do usuário, Ids dos livros emprestados, quantidade, data de emprestimo e data de devolução.
+        - Apenas o bibliotecário pode fazer uma devolução, que é quando será feita a checagem se os materiais emprestados foram devolvidos corretamente.
+            - Deverá checar se o código do livro devolvido bate com o código do livro emprestado
+            - Deverá checar se a quantidade devolvida está de acordo com o que foi emprestado
+            - Deverá checar se a devolução não está atrasada.
+
+
+
+
+
